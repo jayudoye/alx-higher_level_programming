@@ -1,12 +1,7 @@
--- This script converts database, table and field
+-- This script updates the db, table and a field to utf-8
 
-USE hbtn_0c_0;
-
--- Convert the database schema to UTF-8
-ALTER DATABASE hbtn_0c_0 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- Convert the table to UTF-8
-ALTER TABLE first_table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- Convert the 'name' field to UTF-8 (optional)
-ALTER TABLE first_table MODIFY name VARCHAR(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- switch database
+USE `hbtn_0c_0`
+-- convert table to utf-8
+ALTER TABLE `first_table`
+CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
