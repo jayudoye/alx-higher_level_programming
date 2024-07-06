@@ -2,9 +2,8 @@
 """A script that fetches https://alx-intranet.hbtn.io/status using urllib """
 import urllib.request
 
-url = "https://alx-intranet.hbtn.io/status"
-
 if __name__ == "__main__":
+    url = "https://alx-intranet.hbtn.io/status"
 
     try:
         with urllib.request.urlopen(url) as response:

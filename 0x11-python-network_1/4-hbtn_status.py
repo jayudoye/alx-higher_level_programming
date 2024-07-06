@@ -5,9 +5,8 @@ Python script that fetches https://alx-intranet.hbtn.io/status
 
 import requests
 
-url = "https://alx-intranet.hbtn.io/status"
-
 if __name__ == "__main__":
+    url = "https://alx-intranet.hbtn.io/status"
     reponse = requests.get(url)
     
     # Displaying the body of the response with tabulation before each line
