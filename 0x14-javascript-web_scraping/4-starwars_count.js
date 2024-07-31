@@ -2,9 +2,9 @@
 
 const request = require('request');
 
-const movieId = process.argv[2];
+const apiUrl = process.argv[2];
 
-const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
+const characterId = 18;
 
 request.get(apiUrl, (error, response, body) => {
   if (error) {
@@ -13,6 +13,8 @@ request.get(apiUrl, (error, response, body) => {
     console.error('Failed to retrieve movie information. Status code:', response.statusCode);
   } else {
     const movieData = JSON.parse(body);
-    console.log(movieData.title);
+    const wedgeAntillesMovies = movieData.results.filter(movie => movie.characters.some(character => character.endsWith(`/${characterId}/`)));
+
+    console.log(wedgeAntillesMovies.length);
   }
 });
